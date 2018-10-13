@@ -28,25 +28,44 @@ function getContent(){
             card.addEventListener("mouseover", function(){
                 changeLocation(newcontent.data[e].lat, newcontent.data[e].lng)
             });
-            card.setAttribute("class", "card");
 
-            var image = document.createElement("DIV");
-            image.setAttribute("class", "image");
 
-            card.appendChild(image);
+            card.setAttribute("class", "card blog-card");
+
+            var titlecontent = document.createElement("DIV");
+            titlecontent.setAttribute("class", "title-content");
+            var name = document.createElement("H3");
+            name.innerHTML = newcontent.data[e].name;
+
+            var line = document.createElement("HR");
+            titlecontent.appendChild(name);
+            titlecontent.appendChild(line);
+
+            card.append(titlecontent);
+
 
             var info = document.createElement("DIV");
-            info.setAttribute("class", "info");
+            info.setAttribute("class", "card-info");
+            var color = document.createElement("DIV");
+            color.setAttribute("class", "color-overlay");
             for (var x in newcontent.data[e]){
-                if (x != "url"){
+                if (!(x == "url" || x == "lat" ||x == "lng" ||x == "name")){
                 var input = document.createElement("P");
                 input.innerHTML = newcontent.data[e][x];
                 info.appendChild(input);
                 }
             }
 
+
             card.appendChild(info);
+            //card.appendChild(gradient);
+            card.appendChild(color);
+
+   
             addcontent.appendChild(card);
+            card.addEventListener("mouseover", function(){
+                changeLocation(newcontent.data[e].lat, newcontent.data[e].lng)
+            });
         }
     }
 }
