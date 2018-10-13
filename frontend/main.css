@@ -1,21 +1,78 @@
-
-.fixed{
-    position: fixed;
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+* { 
+    margin:0; 
+    padding:0; 
+    box-sizing:border-box; 
+    font-family: 'Roboto', sans-serif;
 }
-
+button {
+    background-color:grey;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: grey;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+button:hover{
+    background-color: white;
+    border-color: grey;
+    color: grey;
+}
 #mapContainer{
-    width: 600px;
+    z-index: 1;
+    width: 35%;
     height: 90vh;
     position: fixed;
     right:0;
-    top: 100px;
+    top: 75px;
+}
+.header{
+    width:100%;
+    height: 75px;
+    text-align: center;
+    position: fixed;
+    top:0;
+    background-color: grey;
+    color: white;
+}
+
+.buttonleft{
+    width: 10%;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.buttonright{
+    top:0;
+    width: 10%;
+    position: absolute;
+    right: 10px;
+    top:10px;
+}
+
+.logo{
+    top: 10px;
+    margin: 10px;
+}
+
+.cards{
+    width: 70%;
+    position: relative;
 }
 .card{
+    display: inline-block;
     z-index: -1;
-    margin: 10% 0 10% 0;
-    width: 85%;
-    height: 500px;
-    position: relative;
+    margin: 10%;
+    width: 75%;
+    height: 80vh;
+    position: absolute;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
