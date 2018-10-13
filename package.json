@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Prolead1/NTUHackathon/issues"
   },
-  "homepage": "https://github.com/Prolead1/NTUHackathon#readme"
+  "homepage": "https://github.com/Prolead1/NTUHackathon#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
