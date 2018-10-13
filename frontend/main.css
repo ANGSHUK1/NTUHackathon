@@ -6,16 +6,24 @@
     font-family: 'Roboto', sans-serif;
 
 }
-
+.submit{
+    width:200px;
+}
+h1{
+    margin:15px;
+    text-align: center;
+}
 input[type=text]{
-    width: 30%;
-    height: 10%;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
     border: solid grey 2px;
     border-radius: 6px;
 }
 input[type=password]{
-    width: 30%;
-    height: 10%;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
     border: solid grey 2px;
     border-radius: 6px;
 }
@@ -96,4 +104,33 @@ button:hover{
     box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
     text-align: center;
     scroll-snap-align: center;
+}
+
+.loginback{
+    display: inline-block;
+    position: absolute;
+    top:25%;
+    left:25%;
+    width: 50%;
+    height: 50vh;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+
+}
+
+.mylogin{
+    float: left;
+    margin-right: 260px;
+
+}
+
+.myregister{
+    float: right;
+    width: 220px;
+
+}
+
+#register{
+    margin-left: 460px;
 }
