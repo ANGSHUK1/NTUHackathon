@@ -1,24 +1,23 @@
-.container{
-    text-align: center;
-}
-.row{
-    margin: auto;
-    padding: 0 auto;
+
+.fixed{
+    position: fixed;
 }
 
+#mapContainer{
+    width: 600px;
+    height: 90vh;
+    position: fixed;
+    right:0;
+    top: 100px;
+}
 .card{
-    float: left;
-    width: 350px;
+    z-index: -1;
+    margin: 10% 0 10% 0;
+    width: 85%;
     height: 500px;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
     text-align: center;
-}
-
-.image{
-    position: relative;
-    height: 50%;
-    width: 100%;
 }

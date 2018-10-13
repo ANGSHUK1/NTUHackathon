@@ -1,3 +1,4 @@
+
 window.onload = function(){
     const login = document.getElementById("login");
     const content = document.getElementById("content");
@@ -15,7 +16,7 @@ function getContent(){
         var newcontent = JSON.parse(http2.responseText);
         for (var e=0; e<newcontent.data.length; e++){
             var card = document.createElement("DIV");
-            card.setAttribute("class", "card five columns");
+            card.setAttribute("class", "card");
             
             var image = document.createElement("DIV");
             image.setAttribute("class", "image");
@@ -24,7 +25,6 @@ function getContent(){
 
             var info = document.createElement("DIV");
             info.setAttribute("class", "info");
-            
             for (var x in newcontent.data[e]){
                 if (x != "url"){
                 var input = document.createElement("P");

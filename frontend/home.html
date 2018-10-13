@@ -5,27 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pet BnB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
     <script src="main.js"></script>
+
 </head>
 <body>
-    <div class="container login" id="login">
+    <div class="login" id="login">
             Login Here! <br><br>
             Username: <input type="text" name="username" id="username"><br>
             Password: <input type="password" name="password" id="password"><br>
             <input type="submit" id="submit" value="Login">
     
     </div>
-    <div class="container home" id="content">
-        <h1>Pet BnB</h1>
-        <div class="row">
-            <a href="./createNew.html"><button class="submit">Add Entry</button></a>
+    <div class="home" id="content">
+        <div class="fixed">
+            <div class="header">
+            <a class="button" href="./createNew.html"><button class="submit">Add Entry</button></a>
+            <h1 class="text">Pet BnB</h1>
+            <a class="button" href="./createNew.html"><button class="submit">Logout</button></a>
         </div>
+        </div>
+        <div id="mapContainer"></div>
+        <div class="cards">
         <div id="newcontent">
-
-
+                
+        </div>
         </div>
     </div>
 </body>
+<script type="text/javascript">
+    // Initialize the platform object:
+    var platform = new H.service.Platform({
+    'app_id': 'yvCqMsv9iGeW10dFMAQw',
+    'app_code': 'CEUMz3jRU9wp16PCTZ5gqg'
+    });
+
+    // Obtain the default map types from the platform object
+    var maptypes = platform.createDefaultLayers();
+
+    // Instantiate (and display) a map object:
+    var map = new H.Map(
+    document.getElementById('mapContainer'),
+    maptypes.normal.map,
+    {
+      zoom: 10,
+      center: { lat: 1.3521, lng: 103.8198 }
+    });
+    
+    setTimeout(function() {map.setCenter({lat:52.5159, lng:13.3777});}, 3000);
+</script>
+
 </html>
