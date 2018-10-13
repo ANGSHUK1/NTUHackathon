@@ -11,18 +11,22 @@
 </head>
 <body>
     <div class="login" id="login">
-            Login Here! <br><br>
-            Username: <input type="text" name="username" id="username"><br>
-            Password: <input type="password" name="password" id="password"><br>
-            <input type="submit" id="submit" value="Login">
-
+            <div class="header">
+                    <div class="logo"><img src="./Titlepic.png" alt="logo" height="70px"></div>
+            </div>
+            <div class="card">
+                <h1>Login</h1>
+            Username:<input type="text" name="username" id="username"><br><br>
+            Password:<input type="password" name="password" id="password"><br><br>
+            <button type="submit" id="submit" value="Login"> Login</button>
+</div>
     </div>
     <div class="home" id="content">
         <div class="fixed">
             <div class="header">
             <a class="buttonleft" href="./createNew.html"><button class="submit">Add Entry</button></a>
-            <h1 class="logo">Pet BnB</h1>
-            <a class="buttonright" href="./createNew.html"><button class="submit">Logout</button></a>
+            <div class="logo"><img src="./Titlepic.png" alt="logo" height="70px"></div>
+            <a class="buttonright" href="./home.html"><button class="submit" id="logout">Logout</button></a>
         </div>
         </div>
         <div id="mapContainer"></div>

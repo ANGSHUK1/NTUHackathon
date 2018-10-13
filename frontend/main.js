@@ -5,6 +5,7 @@ window.onload = function(){
     const password = document.getElementById("password");
     const submit = document.getElementById("submit");
     const addcontent = document.getElementById("newcontent");
+    const logout = document.getElementById("logout");
 var cookie = document.cookie;
 var http2 = new XMLHttpRequest();
 function getContent(){
@@ -65,4 +66,8 @@ else{
     login.style.display = "None";
     getContent();
 }
+logout.addEventListener("click", function(){
+    document.cookie = "auth = no; ";
+    console.log(document.cookie);
+});
 }
