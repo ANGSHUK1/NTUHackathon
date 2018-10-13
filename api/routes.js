@@ -3,11 +3,11 @@ var router = express.Router();
 
 var users = [{"username": "peter", "password": "mypass"}]
 var petAccomodations = [
-  {"address": "A street 1", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.343170", "lng": "103.854549", "url": "http://localhost:3000/images/43189248testimg.jpg"},
-  {"address": "B street 2", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.345341", "lng": "103.900033", "url": "http://localhost:3000/images/43189248testimg.jpg"},
-  {"address": "C street 3", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.330583", "lng": "103.875650", "url": "http://localhost:3000/images/43189248testimg.jpg"},
-  {"address": "D street 4", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.368687", "lng": "103.830324", "url": "http://localhost:3000/images/43189248testimg.jpg"},
-  {"address": "E street 5", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.337454", "lng": "103.774018", "url": "http://localhost:3000/images/43189248testimg.jpg"}
+  {"address": "A street 1", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.343170", "lng": "103.854549", "url": "http://localhost:3000/images/house.jpg"},
+  {"address": "B street 2", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.345341", "lng": "103.900033", "url": "http://localhost:3000/images/house2.jpg"},
+  {"address": "C street 3", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.330583", "lng": "103.875650", "url": "http://localhost:3000/images/house3.jpg"},
+  {"address": "D street 4", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.368687", "lng": "103.830324", "url": "http://localhost:3000/images/house.jpg"},
+  {"address": "E street 5", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.337454", "lng": "103.774018", "url": "http://localhost:3000/images/house2.jpg"}
 ]
 
 // LOGIN FUNCTIONALITY
