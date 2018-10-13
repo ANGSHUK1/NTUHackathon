@@ -3,11 +3,11 @@ var router = express.Router();
 
 var users = [{"username": "peter", "password": "mypass"}]
 var petAccomodations = [
-  {"address": "A street 1", "description": "this is my house and i take care of your pet as good as i can"},
-  {"address": "B street 2", "description": "this is my house and i take care of your pet as good as i can"},
-  {"address": "C street 3", "description": "this is my house and i take care of your pet as good as i can"},
-  {"address": "D street 4", "description": "this is my house and i take care of your pet as good as i can"},
-  {"address": "E street 5", "description": "this is my house and i take care of your pet as good as i can"}
+  {"address": "A street 1", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.343170", "lng": "103.854549"},
+  {"address": "B street 2", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.345341", "lng": "103.900033"},
+  {"address": "C street 3", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.330583", "lng": "103.875650"},
+  {"address": "D street 4", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.368687", "lng": "103.830324"},
+  {"address": "E street 5", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.337454", "lng": "103.774018"}
 ]
 
 // LOGIN FUNCTIONALITY
@@ -60,23 +60,19 @@ router.post("/create", function(req, res){
   const address = req.body.address;
   const description = req.body.description;
   const image = req.files.image;
-  
 
-  if(address == undefined || description == undefined || image == undefined){
-    
-    res.setHeader("Location", "http://localhost:3000/createNew.html");
-    res.status(302);
+
+  if(address == undefined || description == undefined){
     res.json({"status": "invaid input"});
     return;
   }
 
   image.mv(__dirname + "/../images/" + image.name, function(err){
     if(err){
-      res.setHeader("Location", "http://localhost:3000/createNew.html");
-      return res.status(302).send(err);
+      return res.status(500).send(err);
     }
     petAccomodations.push({"address": address, "description": description, "url": "http://localhost;3000/images/" + image.name});
-    res.setHeader("Location", "http://localhost:3000/");
+    res.setHeader("Location", "http://localhost:3000");
     res.status(302);
     res.json({"status": "status success"});
   });
