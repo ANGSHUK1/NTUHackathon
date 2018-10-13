@@ -24,6 +24,7 @@ router.post("/login", function(req, res) {
   for(var i = 0; i <= users.length; i++){
     if(users[i] != undefined && users[i].username == username && users[i].password == password){
       console.log("successfull login");
+      res.setHeader('Set-Cookie', 'auth=yes; Path=/');
       res.json({"username": username})
       return;
     }
