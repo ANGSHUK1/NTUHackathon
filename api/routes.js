@@ -60,19 +60,23 @@ router.post("/create", function(req, res){
   const address = req.body.address;
   const description = req.body.description;
   const image = req.files.image;
+  
 
-
-  if(address == undefined || description == undefined){
+  if(address == undefined || description == undefined || image == undefined){
+    
+    res.setHeader("Location", "http://localhost:3000/createNew.html");
+    res.status(302);
     res.json({"status": "invaid input"});
     return;
   }
 
   image.mv(__dirname + "/../images/" + image.name, function(err){
     if(err){
-      return res.status(500).send(err);
+      res.setHeader("Location", "http://localhost:3000/createNew.html");
+      return res.status(302).send(err);
     }
     petAccomodations.push({"address": address, "description": description, "url": "http://localhost;3000/images/" + image.name});
-    res.setHeader("Location", "http://localhost:3000");
+    res.setHeader("Location", "http://localhost:3000/");
     res.status(302);
     res.json({"status": "status success"});
   });

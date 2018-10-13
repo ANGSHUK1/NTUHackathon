@@ -1,6 +1,10 @@
 .container{
     text-align: center;
 }
+.row{
+    margin: auto;
+    padding: 0 auto;
+}
 
 .card{
     float: left;

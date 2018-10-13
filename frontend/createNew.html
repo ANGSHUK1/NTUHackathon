@@ -2,18 +2,22 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Add Entry</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   </head>
   <body>
+    <div class="container row card">
     <form id="form-id"
       action='http://localhost:3000/api/create'
       method='post'
       encType="multipart/form-data">
-    <input type="file" name="image">
-    <input type="text" name="address">
-    <input type="text" name="description">
-    <button onclick="callit()">
+    <input type="file" name="image" accept="image/*"><br>
+    <textarea name="address"></textarea><br>
+    <textarea name="description"></textarea><br>
+    <button onclick="callit()">Add Entry</button>
   </form>
+</div>
   </body>
   <script type="text/javascript">
   function callit(){
