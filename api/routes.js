@@ -1,15 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-
 var users = [{"username": "peter", "password": "mypass"}]
 var petAccomodations = []
 
+// LOGIN FUNCTIONALITY
 router.post("/login", function(req, res) {
   const username = req.body.username;
   const password = req.body.password;
 
   if(!isValidUsernamePass(username, password)){
+    res.status(404);
     res.json({"status": "invalid username or password"});
     return;
   }
@@ -22,9 +23,11 @@ router.post("/login", function(req, res) {
     }
   }
   console.log("login failed")
-  res.send("kk");
+  res.status(404);
+  res.end();
 });
 
+//REGIS
 router.post("/register", function(req, res){
   const username = req.body.username;
   const password = req.body.password;
