@@ -16,4 +16,10 @@ maptypes.normal.map,
   center: { lat: 1.3521, lng: 103.8198 }
 });
 
-setTimeout(function() {map.setCenter({lat:52.5159, lng:13.3777});}, 3000);
+function changeLocation(lat, lng){
+  map.setCenter({lat:lat, lng: lng});
+  var centerMarker = new H.map.Marker({lat:lat, lng:lng});
+  map.addObject(centerMarker);
+}
+
+changeLocation(1.1521, 103.4198);
