@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Prolead1/NTUHackathon#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "express-fileupload": "^1.0.0-alpha.1"
   }
 }
