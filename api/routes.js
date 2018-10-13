@@ -48,7 +48,7 @@ router.post("/register", function(req, res){
   var new_user = {"username": username, "password": password}
 
   users.push(new_user);
-
+  res.setHeader('Set-Cookie', 'auth=yes; Path=/');
   res.setHeader('Content-Type', 'application/json');
   res.json({"status": "register success", "username": username});
 });
