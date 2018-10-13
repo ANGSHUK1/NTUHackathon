@@ -4,8 +4,15 @@
     padding:0; 
     box-sizing:border-box; 
     font-family: 'Roboto', sans-serif;
-}
 
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+body{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
 button {
     background-color:grey;
     border-width: 2px;
@@ -29,7 +36,7 @@ button:hover{
 #mapContainer{
     z-index: 1;
     width: 35%;
-    height: 90vh;
+    height: 97vh;
     position: fixed;
     right:0;
     top: 75px;
@@ -75,4 +82,5 @@ button:hover{
     border-radius: 10px;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
     text-align: center;
+    scroll-snap-align: center;
 }
