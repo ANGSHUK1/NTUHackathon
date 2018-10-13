@@ -5,7 +5,7 @@ window.onload = function(){
     const password = document.getElementById("password");
     const submit = document.getElementById("submit");
     const addcontent = document.getElementById("newcontent");   
-var cookie = window.cookie;
+var cookie = document.cookie;
 var http2 = new XMLHttpRequest();
 function getContent(){
     http2.open("POST", "http://localhost:3000/api/fetch", true);
@@ -39,7 +39,7 @@ function getContent(){
     }
 }
 
-if (cookie != "auth=yes"){
+if (!cookie.includes("auth=yes")){
 content.style.display = "None";
 
 submit.addEventListener("click", function(){
