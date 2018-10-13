@@ -15,12 +15,12 @@
       action='http://localhost:3000/api/create'
       method='post'
       encType="multipart/form-data">
-    <input type="file" name="image" accept="image/*"><br>
+    <input type="file" name="image" accept="image/*" required><br>
     <input type="hidden" name="lat" id="lat"/>
     <input type="hidden" name="lng" id="lng"/>
-    <textarea name="address" id="address"></textarea><br>
-    <div id="addressValidator" style="padding: 0 0" onclick="validateAddress()">validate Address</button><br>
-    <textarea name="description"></textarea><br>
+    <textarea name="address" id="address" onchange="invalidate()"></textarea><br>
+    <div id="addressValidator" style="width: 150px; height: 50px; margin: auto auto" onclick="validateAddress()">validate Address</div><br>
+    <textarea name="description" required></textarea><br>
 
     <input id="submitbtn" style="color: red" type="submit" value="submit" disabled/>
   </form>
@@ -49,6 +49,12 @@
 
         }
       });
+    }
+
+    function invalidate(){
+      isFormValid = false;
+      document.getElementById("submitbtn").disabled = true;
+      document.getElementById("submitbtn").style.color = "red";
     }
 </script>
 </html>

@@ -69,7 +69,7 @@ router.post("/create", function(req, res){
   console.log("lat "+lat)
   console.log("lng "+lng)
 
-  if(address == undefined || description == undefined){
+  if(address == undefined || description == undefined || image == undefined){
     res.json({"status": "invaid input"});
     return;
   }
@@ -79,7 +79,7 @@ router.post("/create", function(req, res){
     if(err){
       return res.status(500).send(err);
     }
-    petAccomodations.push({"address": address, "description": description, "url": "http://localhost;3000/images/" + image_name});
+    petAccomodations.push({"address": address, "description": description, "url": "http://localhost;3000/images/" + image_name, "lat": lat, "lng": lng});
     res.setHeader("Location", "http://localhost:3000");
     res.status(302);
     res.json({"status": "status success"});
