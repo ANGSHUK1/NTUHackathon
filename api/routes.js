@@ -57,21 +57,29 @@ router.post("/register", function(req, res){
 
 //CREATE NEW ACCOMODATION
 router.post("/create", function(req, res){
+
+  console.log("endpoint hit")
   const address = req.body.address;
   const description = req.body.description;
+  const lat = req.body.lat;
+  const lng = req.body.lng;
   const image = req.files.image;
 
+  console.log("add "+address)
+  console.log("lat "+lat)
+  console.log("lng "+lng)
 
   if(address == undefined || description == undefined){
     res.json({"status": "invaid input"});
     return;
   }
 
-  image.mv(__dirname + "/../images/" + image.name, function(err){
+  var image_name = Math.floor((Math.random() * 99999999) + 1) + image.name;
+  image.mv(__dirname + "/../images/" + image_name, function(err){
     if(err){
       return res.status(500).send(err);
     }
-    petAccomodations.push({"address": address, "description": description, "url": "http://localhost;3000/images/" + image.name});
+    petAccomodations.push({"address": address, "description": description, "url": "http://localhost;3000/images/" + image_name});
     res.setHeader("Location", "http://localhost:3000");
     res.status(302);
     res.json({"status": "status success"});

@@ -1,11 +1,10 @@
-
 window.onload = function(){
     const login = document.getElementById("login");
     const content = document.getElementById("content");
     const username = document.getElementById("username");
     const password = document.getElementById("password");
     const submit = document.getElementById("submit");
-    const addcontent = document.getElementById("newcontent");   
+    const addcontent = document.getElementById("newcontent");
 var cookie = document.cookie;
 var http2 = new XMLHttpRequest();
 function getContent(){
@@ -17,10 +16,10 @@ function getContent(){
         for (var e=0; e<newcontent.data.length; e++){
             var card = document.createElement("DIV");
             card.setAttribute("class", "card");
-            
+
             var image = document.createElement("DIV");
             image.setAttribute("class", "image");
-            
+
             card.appendChild(image);
 
             var info = document.createElement("DIV");

@@ -5,6 +5,9 @@
     <title>Add Entry</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="coordinatesService.js"></script>
   </head>
   <body>
     <div class="container row card">
@@ -13,20 +16,39 @@
       method='post'
       encType="multipart/form-data">
     <input type="file" name="image" accept="image/*"><br>
-    <textarea name="address"></textarea><br>
+    <input type="hidden" name="lat" id="lat"/>
+    <input type="hidden" name="lng" id="lng"/>
+    <textarea name="address" id="address"></textarea><br>
+    <div id="addressValidator" style="padding: 0 0" onclick="validateAddress()">validate Address</button><br>
     <textarea name="description"></textarea><br>
-    <button onclick="callit()">Add Entry</button>
+
+    <input id="submitbtn" style="color: red" type="submit" value="submit" disabled/>
   </form>
 </div>
   </body>
   <script type="text/javascript">
-  function callit(){
-    var form = document.getElementById('form-id');
-    var formData = new FormData(form);
-    var xhr = new XMLHttpRequest();
-    // Add any event handlers here...
-    xhr.open('POST', 'http://localhost:3000/api/create', true);
-    xhr.send(formData);
-  }
-  </script>
+    var isFormValid = false;
+
+    function validateAddress(){
+      var address = document.getElementById("address");
+      geocode(address.value, function(result) {
+        try {
+          console.log(result)
+          var locations = result.response.view[0].result;
+          var lat = locations[0].location.displayPosition.latitude;
+          var lng = locations[0].location.displayPosition.longitude;
+
+          document.getElementById("lat").value = lat;
+          document.getElementById("lng").value = lng;
+
+          console.log("lat: " + lat + " lng: " + lng);
+          isFormValid = true
+          document.getElementById("submitbtn").disabled = false;
+          document.getElementById("submitbtn").style.color = "black";
+        } catch (err) {
+
+        }
+      });
+    }
+</script>
 </html>
