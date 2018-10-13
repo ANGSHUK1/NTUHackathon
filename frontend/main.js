@@ -4,6 +4,7 @@ window.onload = function(){
     const username = document.getElementById("username");
     const password = document.getElementById("password");
     const submit = document.getElementById("submit");
+    const logout = document.getElementById("logout");
     const addcontent = document.getElementById("newcontent");
     const register = document.getElementById("register");
     const r_username = document.getElementById("r_username");
@@ -90,5 +91,8 @@ else{
       login.style.display = "None";
       getContent();
     }
+  });
+  logout.addEventListener("click", function(){
+    document.cookie = "auth=no; "
   });
 }
