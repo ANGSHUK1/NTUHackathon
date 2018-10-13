@@ -12,14 +12,16 @@ var map = new H.Map(
 document.getElementById('mapContainer'),
 maptypes.normal.map,
 {
-  zoom: 10,
+  zoom: 12,
   center: { lat: 1.3521, lng: 103.8198 }
 });
-
+var prevObject;
 function changeLocation(lat, lng){
+  if (prevObject != undefined){
+    map.removeObject(prevObject);
+  }
   map.setCenter({lat:lat, lng: lng});
   var centerMarker = new H.map.Marker({lat:lat, lng:lng});
   map.addObject(centerMarker);
+  prevObject = centerMarker;
 }
-
-changeLocation(1.1521, 103.4198);

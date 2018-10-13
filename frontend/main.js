@@ -13,8 +13,11 @@ function getContent(){
     http2.send();
     http2.onload = function(){
         var newcontent = JSON.parse(http2.responseText);
-        for (var e=0; e<newcontent.data.length; e++){
+        for (let e=0; e<newcontent.data.length; e++){
             var card = document.createElement("DIV");
+            card.addEventListener("mouseover", function(){
+                changeLocation(newcontent.data[e].lat, newcontent.data[e].lng)
+            });
             card.setAttribute("class", "card");
 
             var image = document.createElement("DIV");
