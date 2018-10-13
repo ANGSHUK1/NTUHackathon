@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100');
-* { 
-    margin:0; 
-    padding:0; 
-    box-sizing:border-box; 
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
     font-family: 'Roboto', sans-serif;
 
 }
@@ -27,8 +27,8 @@ input[type=password]{
     border: solid grey 2px;
     border-radius: 6px;
 }
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 body{
     scroll-snap-type: y mandatory;
@@ -107,22 +107,21 @@ button:hover{
 }
 
 .loginback{
-    display: inline-block;
-    position: absolute;
-    top:25%;
-    left:25%;
+    display: block;
+    margin: auto;
+    margin-top: 110px;
     width: 50%;
-    height: 50vh;
-    padding: 50px;
+    min-width: 510px;
+    height: 400px;
     border-radius: 10px;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
 
 }
 
 .mylogin{
-    float: left;
+    /*float: left;
     margin-right: 260px;
-
+    */
 }
 
 .myregister{
@@ -132,5 +131,4 @@ button:hover{
 }
 
 #register{
-    margin-left: 460px;
 }
