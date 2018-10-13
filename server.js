@@ -14,6 +14,10 @@ app.use(express.static(path.join(__dirname, "images")));
 app.use(fileUpload());
 app.use("/api", api);
 
+app.get("/images/:imgname", function(req, res){
+  res.sendFile(path.join(__dirname + "/images/" + req.params.imgname));
+})
+
 app.get("*", function(req, res){
   res.sendFile(path.join(__dirname + "/frontend/home.html"));
 });

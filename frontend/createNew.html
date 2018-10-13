@@ -5,17 +5,18 @@
     <title>Add Entry</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="createNew.css" />
     <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="coordinatesService.js"></script>
   </head>
   <body>
-    <div class="container row card">
+    <div>
     <form id="form-id"
       action='http://localhost:3000/api/create'
       method='post'
       encType="multipart/form-data">
-    <input type="file" name="image" accept="image/*" required><br>
+      <input type="file" name="image" accept="image/*" required><br>
     <input type="hidden" name="lat" id="lat"/>
     <input type="hidden" name="lng" id="lng"/>
     <textarea name="address" id="address" onchange="invalidate()"></textarea><br>
@@ -24,6 +25,7 @@
 
     <input id="submitbtn" style="color: red" type="submit" value="submit" disabled/>
   </form>
+
 </div>
   </body>
   <script type="text/javascript">

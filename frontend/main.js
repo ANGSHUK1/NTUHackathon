@@ -5,7 +5,6 @@ window.onload = function(){
     const password = document.getElementById("password");
     const submit = document.getElementById("submit");
     const addcontent = document.getElementById("newcontent");
-    const logout = document.getElementById("logout");
 var cookie = document.cookie;
 var http2 = new XMLHttpRequest();
 function getContent(){
@@ -16,6 +15,10 @@ function getContent(){
         var newcontent = JSON.parse(http2.responseText);
         for (let e=0; e<newcontent.data.length; e++){
             var card = document.createElement("DIV");
+            card.style.backgroundImage = "url(" + newcontent.data[e].url + ")";
+            card.style.backgroundRepeat = "no-repeat";
+            card.style.backgroundPosition = "center";
+            card.style.backgroundSize = "cover";
             card.addEventListener("mouseover", function(){
                 changeLocation(newcontent.data[e].lat, newcontent.data[e].lng)
             });
@@ -66,8 +69,4 @@ else{
     login.style.display = "None";
     getContent();
 }
-logout.addEventListener("click", function(){
-    document.cookie = "auth = no; ";
-    console.log(document.cookie);
-});
 }

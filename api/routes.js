@@ -3,11 +3,11 @@ var router = express.Router();
 
 var users = [{"username": "peter", "password": "mypass"}]
 var petAccomodations = [
-  {"address": "A street 1", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.343170", "lng": "103.854549"},
-  {"address": "B street 2", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.345341", "lng": "103.900033"},
-  {"address": "C street 3", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.330583", "lng": "103.875650"},
-  {"address": "D street 4", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.368687", "lng": "103.830324"},
-  {"address": "E street 5", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.337454", "lng": "103.774018"}
+  {"address": "A street 1", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.343170", "lng": "103.854549", "url": "http://localhost:3000/images/43189248testimg.jpg"},
+  {"address": "B street 2", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.345341", "lng": "103.900033", "url": "http://localhost:3000/images/43189248testimg.jpg"},
+  {"address": "C street 3", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.330583", "lng": "103.875650", "url": "http://localhost:3000/images/43189248testimg.jpg"},
+  {"address": "D street 4", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.368687", "lng": "103.830324", "url": "http://localhost:3000/images/43189248testimg.jpg"},
+  {"address": "E street 5", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.337454", "lng": "103.774018", "url": "http://localhost:3000/images/43189248testimg.jpg"}
 ]
 
 // LOGIN FUNCTIONALITY
@@ -79,7 +79,7 @@ router.post("/create", function(req, res){
     if(err){
       return res.status(500).send(err);
     }
-    petAccomodations.push({"address": address, "description": description, "url": "http://localhost;3000/images/" + image_name, "lat": lat, "lng": lng});
+    petAccomodations.push({"address": address, "description": description, "url": "http://localhost:3000/images/" + image_name, "lat": lat, "lng": lng});
     res.setHeader("Location", "http://localhost:3000");
     res.status(302);
     res.json({"status": "status success"});
