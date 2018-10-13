@@ -38,7 +38,6 @@ router.post("/login", function(req, res) {
 router.post("/register", function(req, res){
   const username = req.body.username;
   const password = req.body.password;
-  const email = req.body.email;
 
 
   if(!isValidUsernamePass(username, password)){

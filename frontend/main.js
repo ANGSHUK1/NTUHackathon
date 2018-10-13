@@ -5,6 +5,11 @@ window.onload = function(){
     const password = document.getElementById("password");
     const submit = document.getElementById("submit");
     const addcontent = document.getElementById("newcontent");
+    const register = document.getElementById("register");
+    const r_username = document.getElementById("r_username");
+    const password1 = document.getElementById("password1");
+    const password2 = document.getElementById("password2");
+
 var cookie = document.cookie;
 var http2 = new XMLHttpRequest();
 function getContent(){
@@ -69,4 +74,21 @@ else{
     login.style.display = "None";
     getContent();
 }
+
+  register.addEventListener("click", function(){
+    if(password1.value != password2.value){
+      window.alert("no man");
+      return;
+    }
+    var http = new XMLHttpRequest();
+    http.open("POST", "http://localhost:3000/api/register", true);
+    http.setRequestHeader("Content-type", "application/JSON");
+    var params = {"username": r_username.value, "password": password1.value}
+    http.send(JSON.stringify(params));
+    http.onload = function(){
+      content.style.display = "Block";
+      login.style.display = "None";
+      getContent();
+    }
+  });
 }
