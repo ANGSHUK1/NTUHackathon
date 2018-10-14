@@ -51,7 +51,7 @@ function getContent(){
             for (var x in newcontent.data[e]){
                 if (!(x == "url" || x == "lat" ||x == "lng" ||x == "name")){
                 var input = document.createElement("P");
-                input.innerHTML = newcontent.data[e][x];
+                input.innerHTML = x.charAt(0).toUpperCase() + x.slice(1) + ": " +newcontent.data[e][x];
                 info.appendChild(input);
                 }
             }
@@ -97,7 +97,7 @@ else{
 
   register.addEventListener("click", function(){
     if(password1.value != password2.value){
-      window.alert("no man");
+      window.alert("The passwords do not match");
       return;
     }
     var http = new XMLHttpRequest();

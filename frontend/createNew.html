@@ -4,33 +4,41 @@
     <meta charset="utf-8">
     <title>Add Entry</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="createNew.css" />
     <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="coordinatesService.js"></script>
   </head>
   <body>
-    <div>
-    <form id="form-id"
-      action='http://localhost:3000/api/create'
-      method='post'
-      encType="multipart/form-data">
-      <input type="file" name="image" accept="image/*" required><br>
-    <input type="hidden" name="lat" id="lat"/>
-    <input type="hidden" name="lng" id="lng"/>
-    <textarea name="address" id="address" onchange="invalidate()"></textarea><br>
-    <div id="addressValidator" style="width: 150px; height: 50px; margin: auto auto" onclick="validateAddress()">validate Address</div><br>
-    <textarea name="description" required></textarea><br>
+    
+        <div class="header">
+            <div class="logo"><img src="./Titlepic.png" alt="logo" height="70px"></div>
+            <a class="buttonright" href="./home.html"><button id="home">Home</button></a>
+            </div>
+            <div class="card">
+              <h1>Add new entry</h1>
+    <form id="form-id" action='http://localhost:3000/api/create' method='POST' encType="multipart/form-data">
 
-    <input id="submitbtn" style="color: red" type="submit" value="submit" disabled/>
+    <button type="button" onclick="upload()">Upload File</button>
+
+    <input style="display:none;" type="file" name="image" accept="image/*" id="file" required><br>
+    <input type="hidden" name="lat" id="lat"/>
+    <input type="hidden" name="lng" id="lng"/><br>
+    <input type="text" style="width:300px;" placeholder="Enter your name"><br>
+    <input type="text" name="address" style="width:300px;" id="address" onchange="invalidate()" placeholder="Enter your address to validate"><br>
+    <button type="button" onclick="validateAddress()">validate Address</button><br><br>
+    <textarea name="description" style="width:300px;" required placeholder="Describe your facilities"></textarea><br>
+
+    <button id="submitbtn" type="submit" value="submit" disabled>Submit</button>
   </form>
 
 </div>
   </body>
   <script type="text/javascript">
     var isFormValid = false;
-
+    function upload(){
+      document.getElementById("file").click();
+    }
     function validateAddress(){
       var address = document.getElementById("address");
       geocode(address.value, function(result) {
@@ -45,8 +53,8 @@
 
           console.log("lat: " + lat + " lng: " + lng);
           isFormValid = true
-          document.getElementById("submitbtn").disabled = false;
-          document.getElementById("submitbtn").style.color = "black";
+          var button = document.getElementById("submitbtn");
+          button.disabled = false;
         } catch (err) {
 
         }
@@ -56,7 +64,6 @@
     function invalidate(){
       isFormValid = false;
       document.getElementById("submitbtn").disabled = true;
-      document.getElementById("submitbtn").style.color = "red";
     }
 </script>
 </html>

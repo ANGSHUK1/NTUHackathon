@@ -10,6 +10,7 @@
     width:200px;
 }
 h1{
+    color: rgb(219, 192, 54);
     margin:15px;
     text-align: center;
 }
@@ -116,7 +117,6 @@ button:hover{
     height: 400px;
     border-radius: 10px;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
-
 }
 
 .myregister{
@@ -157,6 +157,7 @@ button:hover{
 .blog-card:hover .color-overlay {
   background: rgba(228, 231, 231, 0.83);
 }
+
 
 .title-content {
   text-align: center;
