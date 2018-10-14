@@ -78,12 +78,14 @@ function getContent(){
               var datePicker = document.createElement("input");
               datePicker.addEventListener("click", (e) => {e.stopPropagation()})
               datePicker.setAttribute("type", "date");
+              datePicker.setAttribute("required", "");
               datePicker.style.margin = "10px";
               pickerForm.appendChild(datePicker);
 
               var datePicker2 = document.createElement("input");
               datePicker2.addEventListener("click", (e) => {e.stopPropagation()})
               datePicker2.setAttribute("type", "date");
+              datePicker.setAttribute("required", "");
               pickerForm.appendChild(datePicker2);
 
               var br = document.createElement("br");
@@ -93,6 +95,7 @@ function getContent(){
               username.addEventListener("click", (e) => {e.stopPropagation()})
               username.setAttribute("type", "text");
               username.setAttribute("placeholder", "Enter your name");
+              datePicker.setAttribute("required", "");
               pickerForm.appendChild(username);
 
               var br = document.createElement("br");
@@ -107,7 +110,12 @@ function getContent(){
               pickerForm.appendChild(submitbutton);
 
               submitbutton.onclick = function(){
-                alert("Congratulations! We will get back to you soon!");
+                  if (username.value == "" || datePicker.value == "" || datePicker2.value == ""){
+                      alert("Please don't submit empty forms :(");
+                  }
+                  else{
+                  alert("Congratulations! We will contact you shortly!");
+                  }
             }
               info.appendChild(pickerForm);
             }, false);
