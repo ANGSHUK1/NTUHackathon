@@ -101,7 +101,7 @@ button:hover{
     z-index: 0;
     margin: 10%;
     width: 75%;
-    height: 80vh;
+    height: 85vh;
     border-radius: 10px;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
     text-align: center;
@@ -202,4 +202,9 @@ hr {
   z-index: 20;
   opacity: 0;
   transition: bottom 0.3s, opacity 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+
+p{
+    font-size: 18px;
+    padding: 20px;
 }
