@@ -150,6 +150,10 @@ else{
 }
 
   register.addEventListener("click", function(){
+    if (username.value == "" || datePicker.value == "" || datePicker2.value == ""){
+        alert("Please don't submit empty forms :(");
+    }
+    else{
     if(password1.value != password2.value){
       window.alert("The passwords do not match");
       return;
@@ -164,6 +168,7 @@ else{
       login.style.display = "None";
       getContent();
     }
+}
   });
   logout.addEventListener("click", function(){
     document.cookie = "auth=no; "
