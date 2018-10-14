@@ -150,7 +150,7 @@ else{
 }
 
   register.addEventListener("click", function(){
-    if (username.value == "" || datePicker.value == "" || datePicker2.value == ""){
+    if (r_username.value == "" || password1.value == "" || password2.value == ""){
         alert("Please don't submit empty registration form :(");
     }
     else{
