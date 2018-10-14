@@ -44,7 +44,7 @@ function getContent(){
             card.append(titlecontent);
 
 
-            var info = document.createElement("DIV");
+            let info = document.createElement("DIV");
             info.setAttribute("class", "card-info");
             var color = document.createElement("DIV");
             color.setAttribute("class", "color-overlay");
@@ -61,11 +61,33 @@ function getContent(){
             //card.appendChild(gradient);
             card.appendChild(color);
 
-   
+
             addcontent.appendChild(card);
-            card.addEventListener("mouseover", function(){
+            card.addEventListener("mouseover", function(info){
                 changeLocation(newcontent.data[e].lat, newcontent.data[e].lng)
             });
+
+            info.addEventListener("click", function(){
+              console.log("clicked");
+              //info.removeEventListener("click", eventlistener, false);
+              while (info.firstChild) {
+                console.log("here");
+                info.removeChild(info.firstChild);
+              }
+              var pickerForm = document.createElement("form");
+              var datePicker = document.createElement("input");
+              datePicker.addEventListener("click", (e) => {e.stopPropagation()})
+              datePicker.setAttribute("type", "date");
+              pickerForm.appendChild(datePicker);
+
+              var datePicker2 = document.createElement("input");
+              datePicker2.addEventListener("click", (e) => {e.stopPropagation()})
+              datePicker2.setAttribute("type", "date");
+              pickerForm.appendChild(datePicker2);
+
+              info.appendChild(pickerForm);
+            }, false);
+
         }
     }
 }
