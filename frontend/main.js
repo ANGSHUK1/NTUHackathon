@@ -78,6 +78,7 @@ function getContent(){
               var datePicker = document.createElement("input");
               datePicker.addEventListener("click", (e) => {e.stopPropagation()})
               datePicker.setAttribute("type", "date");
+              datePicker.style.margin = "10px";
               pickerForm.appendChild(datePicker);
 
               var datePicker2 = document.createElement("input");
@@ -85,6 +86,29 @@ function getContent(){
               datePicker2.setAttribute("type", "date");
               pickerForm.appendChild(datePicker2);
 
+              var br = document.createElement("br");
+              pickerForm.appendChild(br);
+
+              var username = document.createElement("input");
+              username.addEventListener("click", (e) => {e.stopPropagation()})
+              username.setAttribute("type", "text");
+              username.setAttribute("placeholder", "Enter your name");
+              pickerForm.appendChild(username);
+
+              var br = document.createElement("br");
+              pickerForm.appendChild(br);
+              
+              var br = document.createElement("br");
+              pickerForm.appendChild(br);
+              
+              var submitbutton = document.createElement("button");
+              submitbutton.setAttribute("type", "submit");
+              submitbutton.innerHTML = "Submit request for this pet";
+              pickerForm.appendChild(submitbutton);
+
+              submitbutton.onclick = function(){
+                alert("Congratulations! We will get back to you soon!");
+            }
               info.appendChild(pickerForm);
             }, false);
 
