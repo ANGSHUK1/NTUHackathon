@@ -3,11 +3,11 @@ var router = express.Router();
 
 var users = [{"username": "peter", "password": "mypass"}]
 var petAccomodations = [
-  {"address": "A street 1", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.343170", "lng": "103.854549", "url": "http://localhost:3000/images/house.jpg"},
-  {"address": "B street 2", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.345341", "lng": "103.900033", "url": "http://localhost:3000/images/house2.jpg"},
-  {"address": "C street 3", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.330583", "lng": "103.875650", "url": "http://localhost:3000/images/house3.jpg"},
-  {"address": "D street 4", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.368687", "lng": "103.830324", "url": "http://localhost:3000/images/house.jpg"},
-  {"address": "E street 5", "description": "this is my house and i take care of your pet as good as i can", "lat": "1.337454", "lng": "103.774018", "url": "http://localhost:3000/images/house2.jpg"}
+  {"name": "Bob", "address": "A street 1", "description": "Hi this is Bobs Family, we want to go on vacation somewhere around 01. July to 01. August. Our Dog is nice. Please Contact", "lat": "1.343170", "lng": "103.854549", "url": "http://localhost:3000/images/photo.jpg"},
+  {"name": "Charles", "address": "B street 2", "description": "Hi this is Charles Family, we want to go on vacation somewhere around 01. July to 01. August. Our Dog is nice. Please Contact", "lat": "1.345341", "lng": "103.900033", "url": "http://localhost:3000/images/photo2.jpg"},
+  {"name": "Trumpy", "address": "C street 3", "description": "Hi this is Trumpys Family, we want to go on vacation somewhere around 01. July to 01. August. Our Dog is nice. Please Contact", "lat": "1.330583", "lng": "103.875650", "url": "http://localhost:3000/images/photo3.jpg"},
+  {"name": "Baly", "address": "D street 4", "description": "Hi this is Balys Family, we want to go on vacation somewhere around 01. July to 01. August. Our Dog is nice. Please Contact", "lat": "1.368687", "lng": "103.830324", "url": "http://localhost:3000/images/photo4.jpg"},
+  {"name": "Doggi", "address": "E street 5", "description": "Hi this is Doggi Family, we want to go on vacation somewhere around 01. July to 01. August. Our Dog is nice. Please Contact", "lat": "1.337454", "lng": "103.774018", "url": "http://localhost:3000/images/photo2.jpg"}
 ]
 
 // LOGIN FUNCTIONALITY
